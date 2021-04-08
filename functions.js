@@ -68,3 +68,59 @@ const binary = (arr, target) => {
         if(arr[pivot] === target) return `Found: ${target} in ${steps} steps`;
     }
 }
+
+// Problem 9
+
+// @param {number} x
+// @return {boolean}
+ 
+ var isPalindrome = function(x) {
+    if (x < 0) return false;
+	
+    // reverse the string representation of x
+    const reverse = `${x}`.split('').reverse().join('');
+    // compare the value regardless of types
+    return x == reverse;
+};
+
+// Problem 34
+//  @param {number[]} nums
+//  @param {number} target
+//  @return {number[]}
+
+ var searchRange = function(nums, target) {
+    tarStart = -1;
+    tarend = -1;
+    for(let i=0;i<nums.length;i++){
+        if(nums[i]==target){
+            if(tarStart == -1){
+                tarStart = i;
+                tarend = i;
+            }else{
+                tarend++;
+            }
+        }
+    }
+    return [tarStart,tarend];
+};
+
+// Problem 412
+
+// @param {number} n
+// @return {string[]}
+
+ var fizzBuzz = function(n) {
+    var result = []
+for (var i = 1 ; i < n+1; i++) {
+  if(!(i % 3) && !(i % 5)) {
+    result.push('FizzBuzz')
+  } else if(!(i % 3)) {
+    result.push('Fizz')
+  } else if(!(i % 5)) {
+    result.push('Buzz')
+  } else {
+    result.push(i.toString())
+  }
+}
+    return result
+};
